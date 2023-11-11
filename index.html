@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Story Reader</title>
+    <link href='https://fonts.googleapis.com/css?family=Mukta' rel='stylesheet'>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            max-width: 700px;
+            min-height: 700px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-sizing:border-box;
+           box-shadow: 0px 10px 20px 5px rgba(160, 248, 248, 0.7);
+            /* box-shadow: 0px 10px 20px 2px rgba(8, 7, 7, 0.1); */
+        }
+
+        h1 {
+            font-size: 24px;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        button {
+            /* display: none; */
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            /* justify-content: flex-start; */
+            /* cursor: pointer; */
+            /* float: inline-end; */
+
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+        #text{
+            font-size: 20px;
+            line-height: 2.5;
+            min-height: 100%;
+            min-width: 100%;
+            border: 0px solid;
+            font-family: 'Mukta';
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- STORY TITLE -->
+        <h1>Power of Inner Peace</h1>
+    </header>
+    <main>
+       <nav> <h1>Once up on a time</h1></nav>
+        <div id="text"></div>
+        <!-- <footer><button id="next-button">Next Chapter</button></footer> -->
+    </main>
+
+    <script>
+       
+        
+        const textElement = document.getElementById("text");
+        const text = `Once upon a time, in a bustling city, there lived a man named Alex. Alex was always on the go, rushing from one task to another, feeling constantly frustrated by the fast-paced nature of his life.
+
+One day, as Alex was hurrying through the crowded streets, he accidentally bumped into an elderly woman. Her belongings fell to the ground, and she looked up at him with a gentle smile. Instead of getting angry or frustrated, she simply said, “It’s alright, young man. Take a moment to breathe.”
+
+Startled by her calmness, Alex took her advice to heart. He paused, closed his eyes, and took a deep breath. In that moment, he realized how much he had been neglecting his own well-being. He had been so caught up in the chaos around him that he had forgotten to take care of himself.
+
+Inspired by the woman’s serene demeanor, Alex decided to make a change. He started incorporating small moments of mindfulness into his daily routine. Whether it was taking a few minutes to meditate in the morning or going for a peaceful walk in the park during his lunch break, Alex began to prioritize his own peace of mind.
+
+As time went on, Alex noticed a remarkable transformation within himself. The frustrations that used to consume him gradually melted away. He became more patient and understanding, both with himself and others. The once-frustrated man had found a newfound sense of calm and balance in his life.
+
+From that day forward, Alex continued to embrace moments of stillness and mindfulness. He learned that by taking the time to pause, breathe, and appreciate the present moment, he could navigate life’s challenges with a sense of peace and tranquility.
+
+And so, the story of the frustrated man who became a calm person reminds us that even in the midst of chaos, we have the power to find inner peace. It all begins with taking a moment to breathe. 😌🌟`;
+        let index = 0;
+
+        function type() {
+          if (index < text.length) {
+            textElement.innerHTML += text.charAt(index);
+            index++;
+            setTimeout(type, 80);
+          }
+        }
+        type();
+        // if(type()){
+       
+        // }
+    </script>
+</body>
+</html>
